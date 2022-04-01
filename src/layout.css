@@ -1,0 +1,28 @@
+.pg-layout {
+  display: grid;
+  grid-template-areas:
+    "head head head head head head"
+    "side side main main main main"
+    "side side main main main main"
+    "side side main main main main"
+    "side side main main main main"
+    "foot foot foot foot foot foot";
+}
+
+.pg-header-layout {
+  grid-area: head;
+}
+
+.pg-sidemenu-layout {
+  margin: 1rem;
+  grid-area: side;
+}
+
+.pg-main-layout {
+  margin: 1rem;
+  grid-area: main;
+}
+
+.pg-footer-layout {
+    grid-area: foot;
+}
