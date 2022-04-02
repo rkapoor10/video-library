@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <header className="navbar-container-flex bg-white">
+    <header className="navbar-container-flex">
       <div className="nav-title">
         <div className="nav-logo">
           <img src="./assets/playdesk-logo.png" alt="logo" />
@@ -20,11 +20,11 @@ const Navbar = () => {
       </div>
       <div className="nav-search-box">
         <input
-          className="search-bar fs-1r"
+          className="search-bar fs-1r dark"
           type="search"
           placeholder="Search for videos, categories and more..."
         />
-        <button className="search-btn" type="submit">
+        <button className="search-btn dark" type="submit">
           <FaSearch title="search" />
         </button>
       </div>

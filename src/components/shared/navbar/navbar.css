@@ -1,6 +1,15 @@
 .navbar-container-flex{
-    padding: 1rem 0.5rem;
-    justify-content: space-evenly;
+    padding: 0.5rem 0.5rem;
+    justify-content: space-between;
+    border:none;
+    box-shadow: none;
+    background-color: 
+    #202020;
+}
+
+.dark{
+    background-color: inherit;
+    color: inherit;
 }
 
 
@@ -8,8 +17,7 @@
     font-family: 'Norwester', sans-serif;                                         
     font-size: 2rem;
     display: flex;
-    gap: 5px;
-  
+    gap: 5px; 
 }
 
 
@@ -25,25 +33,26 @@
 
 
 .nav-search-box{
-    border: 2px solid var(--lightgray-color);
-    padding: 0.5rem 2rem;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
 }
-
-
 
 .search-bar{
     width: 25rem;  
-    padding: 0 0.5rem;
+    padding: 0.5rem 0.5rem;
     font-size: 1rem;
     outline: 2px transparent;
-    border: 1px solid white;
+    border: 1px solid var(--baseshade-gray);
 }
 
 .search-btn-alone,.search-btn{
     border: none;
-    color: var(--gray-color);
-    background-color: var(--white-color);
+    color: var(--lightgray-color);
     font-size: 1.2rem;
+    padding: 0.4rem 0.5rem;
+    background-color: #494b4c;
+    margin: auto;
 }
 
 

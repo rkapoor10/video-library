@@ -2,10 +2,10 @@
   display: grid;
   grid-template-areas:
     "head head head head head head"
-    "side side main main main main"
-    "side side main main main main"
-    "side side main main main main"
-    "side side main main main main"
+    "side main main main main main"
+    "side main main main main main"
+    "side main main main main main"
+    "side main main main main main"
     "foot foot foot foot foot foot";
 }
 
@@ -14,12 +14,11 @@
 }
 
 .pg-sidemenu-layout {
-  margin: 1rem;
   grid-area: side;
 }
 
 .pg-main-layout {
-  margin: 1rem;
+  min-height: 90vh;
   grid-area: main;
 }
 
