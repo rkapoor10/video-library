@@ -7,6 +7,8 @@ import HistoryPage from "../pages/HistoryPage"
 import VideoListingPage from "../pages/VideoListingPage"
 import WatchLaterPage from "../pages/WatchLaterPage"
 import AuthPage from "../pages/AuthPage"
+import LikedVideosPage from "../pages/LikedVideos"
+import PlaylistPage from "../pages/PlaylistPage"
 
 
 const Router = ()=>{
@@ -16,8 +18,9 @@ const Router = ()=>{
             <Route path="/home" element={<HomePage/>}/>
             <Route path="/history" element={<HistoryPage/>}/>
             <Route path="/explore" element={<VideoListingPage/>}/>
-            {/* what will be better path for watch later ? */}
+            <Route path="/playlist" element={<PlaylistPage/>}/>
             <Route path="/watchlater" element={<WatchLaterPage/>}/>
+            <Route path="/liked" element={<LikedVideosPage/>}/>
             <Route path="/auth" element={<AuthPage/>} />
             <Route path="*" element={<ErrorPage/>} />
         </Routes>

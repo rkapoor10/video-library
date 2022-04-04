@@ -1,0 +1,19 @@
+.filters-container{
+    margin: 0.5rem;
+    padding: 1rem;
+    border-bottom: 1px solid var(--basered-color);
+}
+.chips-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.chip{
+    font-size: 1rem;
+    background-color: var(--darkgray-color);
+    /* this will be on active chip or chips if multiple selections */
+    /* color: var(--basered-color); */
+    border-radius: 0.7rem;
+    padding: 0.4rem;
+}
