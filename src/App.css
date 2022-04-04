@@ -1,51 +1,106 @@
-/* .App {
-  text-align: center;
+@import url("./layout.css");
+
+:root{
+  --baseshade-gray: #7c7a7a;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.black{
+  color: var(--black-color);
+}
+.bg-black{
+  background-color: var(--black-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.baseshade-gray{
+  color: var(--baseshade-gray);
+}
+.bg-baseshade-gray{
+  background-color: var(--baseshade-gray);
+}
+.bg-lightshade-blue{
+  background-color: var(--lightshade-blue);
+}
+.bg-darksecondary{
+  background-color: var(--darksecondary-color);
+}
+.darksecondary{
+  color: var(--darksecondary-color);
+}
+.fs-07{
+  font-size: 0.7rem;
+}
+.seperator{
+  border-bottom: 1px solid #494b4c;
 }
 
-.App-header {
-  background-color: #22201c;
-  min-height: 100vh;
+.seperator-lightgray{
+  border-bottom: 1px solid lightgray;
+}
+
+.seperator-dotted{
+  border-bottom: 1px dotted #494b4c;
+}
+
+.padtb-1{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+input[type="radio"] {
+  height: 1rem;
+  width: 1rem;
+  accent-color: var(--primary-color);
+}
+
+.center-flex-column{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  color: white;
+  align-items: center;
+  gap: 2px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-.brand-title {
-  font-size: 3rem;
-  color: #d9d9d9;
-}
-
-.brand-title span {
-  color: #ffde59;
-}
-
-.brand-description {
-  font-size: 1.4rem;
-}
-
-.links {
+.center-flex-rows{
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bg-color-transparent{
+  background-color: transparent;
 }
 
-.links a {
-  color: #d9d9d9;
-  font-size: 1.2rem;
-  margin: 1rem;
-} */
+
+.card-container-horizontal{
+
+  border: none;
+  border-radius: 0rem;
+  width: auto;
+  height: auto;
+}
+
+
+
+.padding-y-1{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.padding-y-2{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.padding-x-1{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.padding-x-2{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.w-90{
+  width: 90%;
+}
+.display-container{
+  border: 1px solid var(--white-color);
+}
+
