@@ -1,7 +1,13 @@
 import React from "react"
+// import VideosContainer from "../components/videosContainer/VideosContainer";
+
 const HistoryPage = ()=>{
     return(
-        <h1>This is history Page</h1>
+        <div className="">
+            <h5>This is history Page</h5>
+            {/* <VideosContainer/> */}
+        </div>
+        
     )
 }
 

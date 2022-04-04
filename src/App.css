@@ -1,5 +1,9 @@
 @import url("./layout.css");
 
+.pg-layout{
+  margin-top: 4rem;
+}
+
 :root{
   --baseshade-gray: #7c7a7a;
 }
@@ -104,3 +108,6 @@ input[type="radio"] {
   border: 1px solid var(--white-color);
 }
 
+.grid-column-layout{
+  grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
+}

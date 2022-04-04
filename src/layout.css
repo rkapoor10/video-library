@@ -1,12 +1,12 @@
 .pg-layout {
   display: grid;
   grid-template-areas:
-    "head head head head head head"
-    "side main main main main main"
-    "side main main main main main"
-    "side main main main main main"
-    "side main main main main main"
-    "foot foot foot foot foot foot";
+    "head head head head head head head head"
+    "side main main main main main main main";
+  /* "side main main main main main main main"
+    "side main main main main main main main"
+    "side main main main main main main main"
+    "foot foot foot foot foot foot foot foot"; */
 }
 
 .pg-header-layout {
@@ -14,14 +14,15 @@
 }
 
 .pg-sidemenu-layout {
+  /* margin-top: 3rem; */
   grid-area: side;
 }
 
 .pg-main-layout {
-  min-height: 90vh;
+  /* margin-top: 3rem; */
   grid-area: main;
 }
 
-.pg-footer-layout {
+/* .pg-footer-layout {
     grid-area: foot;
-}
+} */

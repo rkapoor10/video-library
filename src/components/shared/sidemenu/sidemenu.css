@@ -1,10 +1,18 @@
 .sidemenu-container{
     padding-top: 1rem;
-    min-height:90vh;
     width:15rem;
+    height:100%;
     background-color: 
     #202020;
     
+}
+
+.sticky-sidemenu{
+    position: sticky;
+    top: 3rem;
+    left:0;
+    z-index:4;
+    height:95vh;
 }
 
 .menu-item{
