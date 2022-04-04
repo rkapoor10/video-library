@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <header className="navbar-container-flex">
+    <header className="navbar-container-flex fixed-navbar">
       <div className="nav-title">
         <div className="nav-logo">
           <img src="./assets/playdesk-logo.png" alt="logo" />

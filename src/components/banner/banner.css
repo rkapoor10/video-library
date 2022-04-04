@@ -1,0 +1,16 @@
+.btn-styles{
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+
+}
+
+.parent-cta{
+    position: relative;
+}
+
+.child-cta{
+    position: absolute;
+    bottom:7rem;
+    right: 10rem;
+}

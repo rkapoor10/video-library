@@ -1,0 +1,102 @@
+.size-S {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.profile-image {
+  border: none;
+}
+
+.thumbnail-image {
+  /* width: 20rem; */
+  height: 11.5rem;
+  object-fit: cover;
+}
+
+.video-card-wrapper {
+  width: 20rem;
+  height: 19.2rem;
+  padding: 1rem;
+}
+
+.parent-thumbnail {
+  position: relative;
+}
+
+.child-duration {
+  position: absolute;
+  top: 10.2rem;
+  right:0;
+}
+
+.child-watchlater-btn{
+    position: absolute;
+    top: 0.5rem;
+    left: 15.5rem;
+    
+}
+
+.child-playlist-btn{
+    top: 2.5rem;
+    left: 15.5rem;
+    position: absolute;
+}
+
+.duration {
+  font-size: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.2rem;
+}
+
+.on-thumbnail-btns{
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--lightgray-color);
+    background-color: var(--black-color);
+    /* position: relative; */
+    align-items: center;
+    padding: 0.2rem;
+    border-radius: 5px;
+}
+
+.btns-extension{
+    display: none;
+    /* position: absolute;
+    top:inherit;
+    left: 13.5rem; */
+}
+
+.img-wrapper:hover .on-thumbnail-btns{
+    display: flex;
+}
+
+
+
+.on-thumbnail-btns:hover .btns-extension{
+    display: inline;
+}
+
+
+
+
+
+.video-main-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.video-sub-title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--lightgray-color);
+  margin-bottom: 0.25rem;
+}
+
+.content-wrapper {
+  display: flex;
+  margin-top: 0.5rem;
+  gap: 1rem;
+}
