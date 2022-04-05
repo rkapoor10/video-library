@@ -13,9 +13,24 @@
   object-fit: cover;
 }
 
+.horizontal-thumbnail-image {
+  width:15.4rem;
+  height: 9rem;
+  object-fit: cover;
+}
+
 .video-card-wrapper {
   width: 20rem;
   height: 19.2rem;
+  padding: 1rem;
+}
+
+.horizontal-video-card-wrapper {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 0.5rem;
+  width: 39.25rem;
+  height: 11.5rem;
   padding: 1rem;
 }
 
@@ -26,20 +41,23 @@
 .child-duration {
   position: absolute;
   top: 10.2rem;
-  right:0;
+  right: 0;
 }
 
-.child-watchlater-btn{
-    position: absolute;
-    top: 0.5rem;
-    left: 15.5rem;
-    
+.child-watchlater-btn,.horizontal-child-watchlater-btn{
+  position: absolute;
+  top: 0.5rem;
+  left: 15.5rem;
 }
 
-.child-playlist-btn{
+.child-playlist-btn,.horizontal-child-playlist-btn {
     top: 2.5rem;
     left: 15.5rem;
     position: absolute;
+}
+
+.horizontal-child-watchlater-btn,.horizontal-child-playlist-btn{
+    left: 13rem; 
 }
 
 .duration {
@@ -49,43 +67,31 @@
   padding: 0.2rem;
 }
 
-.on-thumbnail-btns{
-    display: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: var(--lightgray-color);
-    background-color: var(--black-color);
-    /* position: relative; */
-    align-items: center;
-    padding: 0.2rem;
-    border-radius: 5px;
+.on-thumbnail-btns {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--lightgray-color);
+  background-color: var(--black-color);
+  align-items: center;
+  padding: 0.2rem;
+  border-radius: 5px;
 }
 
-.btns-extension{
-    display: none;
-    /* position: absolute;
-    top:inherit;
-    left: 13.5rem; */
+.img-wrapper:hover .on-thumbnail-btns {
+  display: flex;
 }
 
-.img-wrapper:hover .on-thumbnail-btns{
-    display: flex;
-}
-
-
-
-.on-thumbnail-btns:hover .btns-extension{
-    display: inline;
-}
-
-
-
-
-
-.video-main-title {
+.video-main-title{
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+.horizontal-video-main-title{
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
 }
 
 .video-sub-title {
@@ -95,8 +101,22 @@
   margin-bottom: 0.25rem;
 }
 
+.video-description {
+  font-size: 8px;
+}
+
 .content-wrapper {
   display: flex;
   margin-top: 0.5rem;
   gap: 1rem;
+}
+
+.content-width{
+    width: 18.63rem;
+}
+
+.child-remove-btn{
+    position: absolute;
+    top: 4.5rem;
+    left: 13rem;
 }

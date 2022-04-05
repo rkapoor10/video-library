@@ -2,10 +2,10 @@ import React from "react";
 import VideoCardHorizontal from "../components/cards/VideoCardHorizontal";
 // import VideosContainer from "../components/videosContainer/VideosContainer";
 
-const HistoryPage = () => {
+const LikedVideosPage = () => {
   return (
     <div className="">
-      <h2 className="m-2">Watch History</h2>
+      <h2 className="m-2">Liked Videos</h2>
       <VideoCardHorizontal />
       <VideoCardHorizontal />
       <VideoCardHorizontal />
@@ -18,4 +18,4 @@ const HistoryPage = () => {
   );
 };
 
-export default HistoryPage;
+export default LikedVideosPage;

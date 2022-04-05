@@ -24,7 +24,7 @@ const SideMenu = () => {
 
   const activeStyle = {
     color: "red",
-    borderBottom:"0px"
+    borderBottom: "0px",
   };
 
   return (
@@ -35,7 +35,7 @@ const SideMenu = () => {
             to={path}
             key={name}
             className="menu-item"
-            style={({ isActive }) => isActive ?activeStyle:undefined}
+            style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <div className="menu-icon">{icon}</div>
             <div className="menu-title">{name}</div>
