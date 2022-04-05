@@ -26,7 +26,7 @@ const PlaylistCard = () => {
           </div>
         )}
       </div>
-      <div className="content-wrapper">
+      <div className="content-wrapper-playlist">
         <p className="playlist-title">Playlist name</p>
         <p className="channel-title">channel name</p>
         <p className="playlist-tag">private</p>

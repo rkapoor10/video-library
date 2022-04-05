@@ -39,11 +39,17 @@
 }
 
 /* content container styles*/
-.content-wrapper{
+/* cannot give this as it overwrites content-wrapper in video card css */
+/* .content-wrapper{
   display: flex;
   flex-direction: column;
   gap: 3px;
-}
+} */
+.content-wrapper-playlist{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  } 
 .playlist-title {
   font-size: 0.8rem;
   font-weight: bold;

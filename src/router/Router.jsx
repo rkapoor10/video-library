@@ -9,6 +9,7 @@ import WatchLaterPage from "../pages/WatchLaterPage"
 import AuthPage from "../pages/AuthPage"
 import LikedVideosPage from "../pages/LikedVideos"
 import PlaylistPage from "../pages/PlaylistPage"
+import VideoPlayerPage from "../pages/VideoPlayerPage"
 
 
 const Router = ()=>{
@@ -22,6 +23,7 @@ const Router = ()=>{
             <Route path="/watchlater" element={<WatchLaterPage/>}/>
             <Route path="/liked" element={<LikedVideosPage/>}/>
             <Route path="/auth" element={<AuthPage/>} />
+            <Route path="/player" element={<VideoPlayerPage/>}/>
             <Route path="*" element={<ErrorPage/>} />
         </Routes>
     )

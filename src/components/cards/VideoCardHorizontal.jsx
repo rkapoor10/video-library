@@ -1,8 +1,7 @@
 import React from "react";
 import "./videoCard.css";
-import { MdWatchLater,MdClose } from "react-icons/md";
+import { MdWatchLater, MdClose } from "react-icons/md";
 import { RiPlayList2Fill } from "react-icons/ri";
-
 
 const VideoCardHorizontal = () => {
   return (
@@ -25,22 +24,16 @@ const VideoCardHorizontal = () => {
         >
           <RiPlayList2Fill />
         </div>
-        <div
-              className="child-remove-btn on-thumbnail-btns"
-              title="remove"
-            >
-              <MdClose />
-            </div>
+        <div className="child-remove-btn on-thumbnail-btns" title="remove">
+          <MdClose />
+        </div>
       </div>
       <div className="content-wrapper  content-width">
         <div className="column-flex">
-          
-            <p className="horizontal-video-main-title">
-              what if the creator gives a long title in sense of getting more
-              views
-            </p>
-        
-     
+          <p className="horizontal-video-main-title">
+            what if the creator gives a long title in sense of getting more
+            views
+          </p>
 
           <p className="video-sub-title">Samay Raina • 2.8K views</p>
           <p className="video-sub-title">
@@ -54,4 +47,3 @@ const VideoCardHorizontal = () => {
 };
 
 export default VideoCardHorizontal;
-
