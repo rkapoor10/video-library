@@ -2,9 +2,10 @@ import React from "react"
 import ReactPlayer from "react-player"
 import "./videoPlayer.css"
 
-const VideoPlayer = ()=>{
+const VideoPlayer = ({urlParam})=>{
+    
     return(
-        <ReactPlayer url="https://youtu.be/3Cs9gQJxsPg"className="video-player" width="100%" height="100%" controls/>
+        <ReactPlayer url={`https://youtu.be/${urlParam}`} className="video-player" width="100%" height="100%" controls/>
     )
 }
 
