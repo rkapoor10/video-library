@@ -1,6 +1,6 @@
 .sidemenu-container{
     padding-top: 1rem;
-    width:15rem;
+    /* width:15rem; */
     height:100%;
     background-color: 
     #202020;
@@ -42,6 +42,8 @@
 .menu-item:hover{
     background-color: rgba(138, 137, 137, 0.397);
 }
+
+
 
 .menu-title{
     font-size: 1rem;

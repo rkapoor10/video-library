@@ -17,12 +17,12 @@ const VideoCard = ({details}) => {
 
   console.log({details})
 
-  const {channelId, title, urls, publishedDate, description, creator, duration, tags, statistics } = details
+  const {channelId, title, urls, creator, duration, statistics } = details
 
   return (
     <div className="video-card-wrapper ">
       <div className="parent-thumbnail img-wrapper">
-        <Link to={`/player?playerId=${channelId}`}>
+        <Link to={`/player/${channelId}`}>
           <img
             className="thumbnail-image"
             src={urls["thumbnail"]}

@@ -16,6 +16,7 @@ function App() {
           <SideMenu />
         </div>
         <div className="pg-main-layout">
+        
           {/* <Link to="/mockman">Go to MockMan || </Link>
           <Link to="/home">Home ||</Link>
           <Link to="/history">History ||</Link>
