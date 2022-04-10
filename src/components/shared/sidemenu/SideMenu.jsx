@@ -1,4 +1,3 @@
-import react from "react";
 import { NavLink } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { MdExplore, MdWatchLater } from "react-icons/md";

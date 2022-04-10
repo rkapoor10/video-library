@@ -13,10 +13,11 @@
   grid-area: head;
 }
 
+
 .pg-sidemenu-layout {
-  /* margin-top: 3rem; */
   grid-area: side;
 }
+
 
 .pg-main-layout {
   /* margin-top: 3rem; */

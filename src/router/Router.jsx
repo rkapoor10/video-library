@@ -23,7 +23,7 @@ const Router = ()=>{
             <Route path="/watchlater" element={<WatchLaterPage/>}/>
             <Route path="/liked" element={<LikedVideosPage/>}/>
             <Route path="/auth" element={<AuthPage/>} />
-            <Route path="/player" element={<VideoPlayerPage/>}/>
+            <Route path="/player/:playerId" element={<VideoPlayerPage/>}/>
             <Route path="*" element={<ErrorPage/>} />
         </Routes>
     )

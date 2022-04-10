@@ -10,17 +10,17 @@
 .thumbnail-image {
   /* width: 20rem; */
   height: 11.5rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .horizontal-thumbnail-image {
   width:15.4rem;
   height: 9rem;
-  object-fit: cover;
+  object-fit: contain; 
 }
 
 .video-card-wrapper {
-  width: 20rem;
+  /* width: 20rem; */
   height: 19.2rem;
   padding: 1rem;
 }
@@ -46,13 +46,13 @@
 
 .child-watchlater-btn,.horizontal-child-watchlater-btn{
   position: absolute;
-  top: 0.5rem;
-  left: 15.5rem;
+  top: 1.5rem;
+  left: 15rem;
 }
 
 .child-playlist-btn,.horizontal-child-playlist-btn {
-    top: 2.5rem;
-    left: 15.5rem;
+    top: 3.5rem;
+    left: 15rem;
     position: absolute;
 }
 
@@ -72,11 +72,14 @@
   cursor: pointer;
   font-size: 1.5rem;
   color: var(--lightgray-color);
-  background-color: var(--black-color);
+  background-color: rgba(0, 0, 0, 0.616);
   align-items: center;
   padding: 0.2rem;
   border-radius: 5px;
+  border: none;
+ 
 }
+
 
 .img-wrapper:hover .on-thumbnail-btns {
   display: flex;

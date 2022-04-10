@@ -3,7 +3,7 @@ import PlaylistContainer, { PlaylistCard } from "../components/playlists/Playlis
 
 const PlaylistPage = ()=>{
     return(
-        <div>
+        <div className="m-2">
             <h2  className="m-2">Your Playlists</h2>
             {/* <PlaylistCard/> */}
             <PlaylistContainer/>
