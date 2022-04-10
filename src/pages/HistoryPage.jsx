@@ -6,13 +6,13 @@ const HistoryPage = () => {
   return (
     <div className="">
       <h2 className="m-2">Watch History</h2>
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
+      <VideoCardHorizontal location={"WatchHistory"} />
+      <VideoCardHorizontal location={"WatchHistory"} />
+      <VideoCardHorizontal location={"WatchHistory"} />
+      <VideoCardHorizontal location={"WatchHistory"} />
+      <VideoCardHorizontal location={"WatchHistory"} />
+      <VideoCardHorizontal location={"WatchHistory"} />
+      <VideoCardHorizontal location={"WatchHistory"} />
       {/* <VideosContainer/> */}
     </div>
   );

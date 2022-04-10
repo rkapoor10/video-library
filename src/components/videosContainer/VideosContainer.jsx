@@ -8,7 +8,7 @@ const VideosContainer = ({ heading, videosData }) => {
       <div className="txt-m">{heading}</div>
       <div className="grid-column-layout">
         {videosData.map((videoDetails) => (
-          <VideoCard details={videoDetails} />
+          <VideoCard key={videoDetails.id} details={videoDetails} />
         ))}
       </div>
     </div>

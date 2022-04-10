@@ -1,16 +1,16 @@
 import React from "react"
 import VideoCard from "../components/cards/VideoCard";
 import Filters from "../components/filters/Filters";
-import { useVideo } from "../context/VideoContext/VideoContext";
+import { useFilter } from "../context/FilterContext/FilterContext";
 
 const VideoListingPage = () => {
-    const {videosData} = useVideo()
+  const {filteredData} = useFilter()
   return (
     <div className="explore-page-wrapper">
       <Filters />
       <div className="grid-column-layout">
-        {videosData.map((videoDetails)=>
-            <VideoCard details={videoDetails}/>
+        {filteredData.map((videoDetails)=>
+            <VideoCard key={videoDetails.id} details={videoDetails}/>
         )}
       </div>
     </div>

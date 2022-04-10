@@ -9,7 +9,7 @@
   gap: 0.5rem;
 }
 
-.chip {
+.chip,.active-chip{
   font-size: 1rem;
   background-color: var(--darkgray-color);
   cursor: pointer;
@@ -17,6 +17,11 @@
   /* color: var(--basered-color); */
   border-radius: 0.7rem;
   padding: 0.4rem;
+}
+
+.active-chip{
+  background-color: var(--basered-color);
+  color: var(--white-color);
 }
 
 .chip:hover {

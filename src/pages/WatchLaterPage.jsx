@@ -4,15 +4,15 @@ import VideoCardHorizontal from "../components/cards/VideoCardHorizontal";
 
 const WatchLaterPage = () => {
   return (
-    <div className="">
+    <div className="m-2">
       <h2 className="m-2">Watch Later</h2>
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
+      <VideoCardHorizontal location={"WatchLater"} />
+      <VideoCardHorizontal location={"WatchLater"} />
+      <VideoCardHorizontal location={"WatchLater"} />
+      <VideoCardHorizontal location={"WatchLater"} />
+      <VideoCardHorizontal location={"WatchLater"} />
+      <VideoCardHorizontal location={"WatchLater"} />
+      <VideoCardHorizontal location={"WatchLater"} />
       {/* <VideosContainer/> */}
     </div>
   );
