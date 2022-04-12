@@ -77,7 +77,6 @@
   padding: 0.2rem;
   border-radius: 5px;
   border: none;
- 
 }
 
 
@@ -120,6 +119,6 @@
 
 .child-remove-btn{
     position: absolute;
-    top: 4.5rem;
+    top: 5.5rem;
     left: 13rem;
 }

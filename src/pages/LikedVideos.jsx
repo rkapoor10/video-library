@@ -6,13 +6,13 @@ const LikedVideosPage = () => {
   return (
     <div className="">
       <h2 className="m-2">Liked Videos</h2>
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
-      <VideoCardHorizontal />
+      <VideoCardHorizontal location={"LikedVideos"} />
+      <VideoCardHorizontal location={"LikedVideos"} />
+      <VideoCardHorizontal location={"LikedVideos"} />
+      <VideoCardHorizontal location={"LikedVideos"} />
+      <VideoCardHorizontal location={"LikedVideos"} />
+      <VideoCardHorizontal location={"LikedVideos"} />
+      <VideoCardHorizontal location={"LikedVideos"} />
       {/* <VideosContainer/> */}
     </div>
   );

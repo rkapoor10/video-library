@@ -50,6 +50,8 @@
     flex-direction: column;
     gap: 3px;
   } 
+
+  
 .playlist-title {
   font-size: 0.8rem;
   font-weight: bold;

@@ -27,6 +27,5 @@ const VideoProvider = ({children})=>{
 
 // use context
 const useVideo = ()=> useContext(VideoContext)
-
 export {useVideo,VideoProvider}
 

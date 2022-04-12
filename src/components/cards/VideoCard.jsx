@@ -3,19 +3,19 @@ import "./videoCard.css";
 import { MdWatchLater } from "react-icons/md";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import {toast} from "react-toastify"
+
 
 const VideoCard = ({details}) => {
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
-    console.log("clicked add to watchlater");
+    toast.success("Added to Watch Later")
   };
 
   const handleAddToPlaylist = (event) => {
     event.stopPropagation();
-    console.log("clicked add to playlist");
+    toast.success("Added to Playlist")
   };
-
-  console.log({details})
 
   const {channelId, title, urls, creator, duration, statistics } = details
 
