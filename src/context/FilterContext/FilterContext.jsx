@@ -1,40 +1,32 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 import { useVideo } from "../VideoContext/VideoContext";
+import filterReducer from "./FilterReducer";
 
 // create Context
 const defaultContextValue = {};
 const FilterContext = createContext(defaultContextValue);
 
+// provide Context
 const FilterProvider = ({ children }) => {
   const { videosData } = useVideo();
-  const [filtersArray, setFilters] = useState(["All"]);
-  const filterDispatch = (action, filterCategory) => {
-    switch (action) {
-      case "ADD_FILTER":
-        return setFilters((filtersArray) => [...filtersArray, filterCategory]);
-      case "REMOVE_FILTER":
-        return setFilters((filtersArray) =>
-          filtersArray.filter((filterItem) => filterItem !== filterCategory)
-        );
-      default:
-        return filtersArray;
-    }
-  };
+  const initialFilterState = { filtersArray: ["All"] };
+  const [filterState, filterDispatch] = useReducer(
+    filterReducer,
+    initialFilterState
+  );
 
   const filterData = () => {
-    console.log({ videosData });
+    const { filtersArray } = filterState;
     if (filtersArray.includes("All")) return videosData;
     return videosData.filter((video) =>
       video.tags.some((tag) => filtersArray.includes(tag))
     );
   };
-
   const filteredData = filterData();
 
-  // provide Context
   return (
     <FilterContext.Provider
-      value={{ filteredData, filtersArray, filterDispatch }}
+      value={{ filteredData, filterState, filterDispatch }}
     >
       {children}
     </FilterContext.Provider>

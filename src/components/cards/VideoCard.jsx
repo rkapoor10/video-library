@@ -10,13 +10,11 @@ const VideoCard = ({details}) => {
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
     toast.success("Added to Watch Later")
-    console.log("clicked add to watchlater");
   };
 
   const handleAddToPlaylist = (event) => {
     event.stopPropagation();
     toast.success("Added to Playlist")
-    console.log("clicked add to playlist");
   };
 
   const {channelId, title, urls, creator, duration, statistics } = details

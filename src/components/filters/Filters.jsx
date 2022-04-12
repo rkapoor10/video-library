@@ -3,7 +3,8 @@ import "./filters.css";
 import { useFilter } from "../../context/FilterContext/FilterContext";
 
 const Filters = () => {
-  const { filtersArray, filterDispatch } = useFilter();
+  const { filterState, filterDispatch } = useFilter();
+  const {filtersArray} = filterState
   const filterCategories = [
     "All",
     "Training",
@@ -14,13 +15,15 @@ const Filters = () => {
     "Women",
     "Men",
   ];
+
+
   const filterHandler = (category) => {
+
     filtersArray?.includes(category)
-      ? filterDispatch("REMOVE_FILTER", category)
-      : filterDispatch("ADD_FILTER", category);
+      ? filterDispatch({type:"REMOVE_FILTER", payload:category})
+      : filterDispatch({type:"ADD_FILTER", payload:category});
   };
 
- 
   return (
     <div className="filters-container">
       <ul className="chips-container">
