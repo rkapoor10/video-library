@@ -8,7 +8,7 @@
 }
 
 .thumbnail-image {
-  /* width: 20rem; */
+  width: 100%;
   height: 11.5rem;
   object-fit: contain;
 }
@@ -20,7 +20,6 @@
 }
 
 .video-card-wrapper {
-  /* width: 20rem; */
   height: 19.2rem;
   padding: 1rem;
 }
@@ -47,17 +46,17 @@
 .child-watchlater-btn,.horizontal-child-watchlater-btn{
   position: absolute;
   top: 1.5rem;
-  left: 15rem;
+  right:0.5rem;
 }
 
 .child-playlist-btn,.horizontal-child-playlist-btn {
     top: 3.5rem;
-    left: 15rem;
+    right:0.5rem;
     position: absolute;
 }
 
 .horizontal-child-watchlater-btn,.horizontal-child-playlist-btn{
-    left: 13rem; 
+    right: 0; 
 }
 
 .duration {
@@ -120,5 +119,5 @@
 .child-remove-btn{
     position: absolute;
     top: 5.5rem;
-    left: 13rem;
+    right:0;
 }

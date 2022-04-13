@@ -14,7 +14,7 @@ const HomePage = () => {
       <VideosContainer heading={"Must Watch"} />
 
       {/* watch again */}
-      <VideosContainer heading={"Trending"} />
+      <VideosContainer heading={"Matches"} />
     </div>
   );
 };
