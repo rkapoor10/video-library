@@ -3,33 +3,59 @@ import "./videoCard.css";
 import { MdWatchLater, MdClose } from "react-icons/md";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+import { useVideo } from "../../context/VideoContext/VideoContext";
 
-const VideoCardHorizontal = ({location}) => {
+const VideoCardHorizontal = ({details,location}) => {
+  const {videoDispatch} = useVideo()
+  const {channelId, title, urls, creator, statistics,description } = details
+
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
-    toast.success("Added to Watch Later")
-
+    if(location === "WatchLater"){
+      videoDispatch({type:"REMOVE_FROM_WATCHLATER",payload:details})
+      toast.success("Removed from Watch Later")
+    }
+    else{
+      videoDispatch({type:"ADD_TO_WATCHLATER",payload:details})
+      toast.success("Added to Watch Later")
+    }
   };
 
   const handleAddToPlaylist = (event) => {
     event.stopPropagation();
     toast.success("Added to Playlist")
-
   };
 
   const handleRemoveClick = (event) => {
-    event.stopPropagation()
+    event.stopPropagation();
     toast.success(`Removed from ${location}`)
+    switch(location){
+      case "WatchHistory":
+        videoDispatch({type:"REMOVE_FROM_HISTORY",payload:details})
+        return
+      case "WatchLater":
+        videoDispatch({type:"REMOVE_FROM_WATCHLATER",payload:details})
+        return
+      case "LikedVideos":
+        videoDispatch({type:"REMOVE_FROM_LIKED",payload:details})
+        return
+      default:
+        return
+    }
+    
   }
 
   return (
     <div className="horizontal-video-card-wrapper">
       <div className="parent-thumbnail img-wrapper">
+      <Link to={`/player/${channelId}`}>
         <img
           className="horizontal-thumbnail-image "
-          src="https://i.ytimg.com/vi/eyoDsR5FBHA/hq720_live.jpg?sqp=CPSbopIG-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBbvqZuH3oUWTVlwD8tXW9a6cMIgw"
+          src={urls["thumbnail"]}
           alt="thumbnail-image"
         />
+        </Link>
         <button
           className="horizontal-child-watchlater-btn on-thumbnail-btns fs-3"
           title="watch later"
@@ -52,13 +78,11 @@ const VideoCardHorizontal = ({location}) => {
       <div className="content-wrapper  content-width">
         <div className="column-flex">
           <p className="horizontal-video-main-title">
-            what if the creator gives a long title in sense of getting more
-            views
+          {title}
           </p>
-          <p className="video-sub-title">Samay Raina • 2.8K views</p>
+          <p className="video-sub-title">{creator} • {statistics["viewCount"]}M views</p>
           <p className="video-sub-title">
-            vIDEO DESCRIPTION Lorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Tempora, nesciunt, ipsam dolores sunt
+            {description}
           </p>
         </div>
       </div>

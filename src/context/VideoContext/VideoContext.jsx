@@ -1,5 +1,6 @@
-import {createContext, useContext, useEffect, useState} from "react"
+import {createContext, useContext, useEffect, useReducer, useState} from "react"
 import axios from "axios"
+import videoReducer from "./VideoReducer"
 // create context
 
 const VideoContext = createContext({})
@@ -7,6 +8,8 @@ const VideoContext = createContext({})
 //provide context
 
 const VideoProvider = ({children})=>{
+    const initialVideoState = { likedVideos: [] , watchLaterVideos: [] , history: []}
+    const [videoState, videoDispatch] = useReducer(videoReducer,initialVideoState)
     const [videosData, setVideosData] = useState([])
     const fetchVideo = async ()=>{
         try{
@@ -19,7 +22,7 @@ const VideoProvider = ({children})=>{
     }
     useEffect(()=>fetchVideo(),[])
     return(
-        <VideoContext.Provider value={{videosData}}>
+        <VideoContext.Provider value={{videosData,videoState,videoDispatch}}>
             {children}
         </VideoContext.Provider>
     )

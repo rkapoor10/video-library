@@ -4,11 +4,16 @@ import { MdWatchLater } from "react-icons/md";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import {toast} from "react-toastify"
+import { useVideo } from "../../context/VideoContext/VideoContext";
 
 
 const VideoCard = ({details}) => {
+
+  const {videoDispatch} = useVideo()
+
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
+    videoDispatch({type:"ADD_TO_WATCHLATER",payload:details})
     toast.success("Added to Watch Later")
   };
 

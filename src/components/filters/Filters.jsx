@@ -29,7 +29,7 @@ const Filters = () => {
       <ul className="chips-container">
         {filterCategories.map((category) => {
           return (
-            <li
+            <li key={category}
               className={
                 filtersArray?.includes(category) ? "active-chip" : "chip"
               }
