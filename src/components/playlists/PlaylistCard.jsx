@@ -2,7 +2,13 @@ import { useState } from "react";
 import "./playlistCard.css";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { FaPlay } from "react-icons/fa";
-const PlaylistCard = () => {
+import { useNavigate } from "react-router-dom";
+
+
+
+const PlaylistCard = ({playlist}) => {
+  const {id,title, channelName, visibility,videos} = playlist
+  const navigate = useNavigate()
   const [playBtn, setPlayBtn] = useState(false);
   return (
     <div className="playlist-card">
@@ -12,7 +18,7 @@ const PlaylistCard = () => {
          >
         <img
           className=""
-          src="https://i.ytimg.com/vi/3Cs9gQJxsPg/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDrsrN9ifPxzgnqpk8wURR4QobRdw"
+          src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png"
           alt="playlist-image"
         />
         {playBtn ? (
@@ -22,16 +28,16 @@ const PlaylistCard = () => {
           </div>
         ) : (
           <div className="count-display child-count">
-            <span>count</span> <RiPlayList2Fill />
+            <span className="fw-bold">{videos?.length}</span> <RiPlayList2Fill />
           </div>
         )}
       </div>
       <div className="content-wrapper-playlist">
-        <p className="playlist-title">Playlist name</p>
-        <p className="channel-title">channel name</p>
-        <p className="playlist-tag">private</p>
+        <p className="playlist-title">{title}</p>
+        <p className="channel-title">{channelName}</p>
+        <p className="playlist-tag">{visibility}</p>
         {/* tag(private/public/unlisted) */}
-        <button className="view-playlist-btn">VIEW FULL PLAYLIST</button>
+        <button className="view-playlist-btn" onClick={()=>navigate(`/userplaylist/${id}`)}>VIEW FULL PLAYLIST</button>
       </div>
     </div>
   );

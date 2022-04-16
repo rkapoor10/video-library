@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import VideoPlayer from "../components/videoPlayer/VideoPlayer";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { AiFillLike } from "react-icons/ai";

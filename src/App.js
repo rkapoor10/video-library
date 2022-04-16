@@ -1,16 +1,18 @@
 import "./App.css";
-import React from 'react';
+import React from "react";
 import Router from "./router/Router";
 // import { Link } from "react-router-dom";
-import { ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/shared/navbar/Navbar";
 import Footer from "./components/shared/footer/Footer";
 import SideMenu from "./components/shared/sidemenu/SideMenu";
 
+
 function App() {
+
   return (
-    <div className="App ">
+    <div className="App ">  
       <div className="pg-layout">
         <div className="pg-header-layout">
           <Navbar />
@@ -27,6 +29,7 @@ function App() {
           <Link to="/auth">Auth ||</Link>
           <Link to="/brokenpath">Broken Link</Link> */}
           <Router />
+
           <ToastContainer
             position="top-right"
             autoClose={2000}
