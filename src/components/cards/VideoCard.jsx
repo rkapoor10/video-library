@@ -33,7 +33,7 @@ const VideoCard = ({details,setOpenModal, setNewVideo}) => {
           <img
             className="thumbnail-image"
             src={urls["thumbnail"]}
-            alt="thumbnail-image"
+            alt="thumbnail"
           />
         </Link>
         <button
@@ -59,7 +59,7 @@ const VideoCard = ({details,setOpenModal, setNewVideo}) => {
         <img
           className="avatar size-S profile-image"
           src="./assets/playdesk-logo.png"
-          alt="profile-image"
+          alt="profile"
         />
         <div className="coloumn-flex title-container">
           <p className="video-main-title">

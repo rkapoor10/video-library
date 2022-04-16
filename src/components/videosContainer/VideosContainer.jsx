@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import "./videosContainer.css";
 import VideoCard from "../cards/VideoCard";
 import { useVideo } from "../../context/VideoContext/VideoContext";

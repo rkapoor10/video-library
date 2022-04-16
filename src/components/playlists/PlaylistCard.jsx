@@ -19,7 +19,7 @@ const PlaylistCard = ({playlist}) => {
         <img
           className=""
           src="https://music.apple.com/assets/meta/apple-music-4d84eb1deedb9217bf940603688603b0.png"
-          alt="playlist-image"
+          alt="playlist"
         />
         {playBtn ? (
           <div className="playall-btn child-playall">

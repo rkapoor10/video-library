@@ -1,5 +1,4 @@
 import { createContext, useContext, useReducer, useState } from "react";
-import { useVideo } from "../VideoContext/VideoContext";
 import { v4 as uuid } from "uuid";
 
 // create context

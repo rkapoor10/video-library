@@ -1,10 +1,10 @@
 import React from "react";
 import "./playlistForm.css";
 import { usePlaylist } from "../../../context/PlaylistContext/PlaylistContext";
-import { toast, ToastContainer } from "react-toastify";
+import {toast} from "react-toastify";
 
 const CreatePlaylistForm = () => {
-  const { openModal, setOpenModal } = usePlaylist();
+  const { setOpenModal } = usePlaylist();
   return (
     <>
       <div className="body">

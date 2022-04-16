@@ -1,5 +1,5 @@
 import "./modal.css";
-import { useState } from "react";
+
 
 const Modal = ({children,openModal, setOpenModal, heading}) => {
   return (
