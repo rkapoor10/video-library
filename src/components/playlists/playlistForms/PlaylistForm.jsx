@@ -6,7 +6,6 @@ import CreatePlaylistForm from "./CreatePlaylistForm";
 import { toast } from "react-toastify";
 
 const PlaylistForm = ({ newVideo }) => {
-  console.log({newVideo})
   const { openModal, setOpenModal, playlistState, playlistDispatch } =
     usePlaylist();
   const [createPlaylistModal, setCreatePlaylistModal] = useState(false);
@@ -59,7 +58,7 @@ const PlaylistForm = ({ newVideo }) => {
               setOpenModal={setOpenModal}
               heading={"New Playlist"}
             >
-              <CreatePlaylistForm />
+              <CreatePlaylistForm newVideo={ newVideo } />
             </Modal>
           )}
         </ul>

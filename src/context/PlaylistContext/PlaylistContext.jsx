@@ -55,10 +55,10 @@ const PlaylistProvider = ({ children }) => {
         return [
           ...state,
           {
-            id: payload.id,
+            id: uuid(),
             title: payload.title,
             visibility: payload.visibility,
-            videos: payload.videos,
+            videos: [payload.video],
           },
         ];
       case "ADD_TO_PLAYLIST":
