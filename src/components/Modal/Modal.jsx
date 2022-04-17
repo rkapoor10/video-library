@@ -17,7 +17,7 @@ const Modal = ({children,openModal, setOpenModal, heading}) => {
          
             {children}
          
-          
+
         </div>
       </div>
     ):<></>
