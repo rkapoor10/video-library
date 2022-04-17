@@ -5,9 +5,12 @@ import { RiPlayList2Fill } from "react-icons/ri";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useVideo } from "../../context/VideoContext/VideoContext";
+import { usePlaylist } from "../../context/PlaylistContext/PlaylistContext";
 
-const VideoCardHorizontal = ({details,location}) => {
+
+const VideoCardHorizontal = ({details,location,playlistId,setOpenModal, setNewVideo}) => {
   const {videoDispatch} = useVideo()
+  const {playlistDispatch} = usePlaylist()
   const {channelId, title, urls, creator, statistics,description } = details
 
   const handleAddToWatchLater = (event) => {
@@ -24,7 +27,8 @@ const VideoCardHorizontal = ({details,location}) => {
 
   const handleAddToPlaylist = (event) => {
     event.stopPropagation();
-    toast.success("Added to Playlist")
+    setOpenModal(true)
+    setNewVideo(details)
   };
 
   const handleRemoveClick = (event) => {
@@ -40,6 +44,12 @@ const VideoCardHorizontal = ({details,location}) => {
       case "LikedVideos":
         videoDispatch({type:"REMOVE_FROM_LIKED",payload:details})
         return
+      case "Playlists":
+        playlistDispatch({
+          type: "REMOVE_FROM_PLAYLIST",
+          payload: { id: playlistId, video: details },
+        });
+        return
       default:
         return
     }
@@ -53,7 +63,7 @@ const VideoCardHorizontal = ({details,location}) => {
         <img
           className="horizontal-thumbnail-image "
           src={urls["thumbnail"]}
-          alt="thumbnail-image"
+          alt="thumbnail"
         />
         </Link>
         <button
@@ -66,7 +76,7 @@ const VideoCardHorizontal = ({details,location}) => {
         <button
           className="horizontal-child-playlist-btn on-thumbnail-btns fs-3"
           title="add to playlist"
-          onClick={handleAddToPlaylist}
+          onClick={(event)=>handleAddToPlaylist(event,details)}
         >
           <RiPlayList2Fill />
         </button>

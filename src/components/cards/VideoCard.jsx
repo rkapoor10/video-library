@@ -7,21 +7,23 @@ import {toast} from "react-toastify"
 import { useVideo } from "../../context/VideoContext/VideoContext";
 
 
-const VideoCard = ({details}) => {
 
+
+
+const VideoCard = ({details,setOpenModal, setNewVideo}) => {
   const {videoDispatch} = useVideo()
-
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
     videoDispatch({type:"ADD_TO_WATCHLATER",payload:details})
     toast.success("Added to Watch Later")
   };
 
-  const handleAddToPlaylist = (event) => {
+  const handleAddToPlaylist = (event,details) => {
     event.stopPropagation();
-    toast.success("Added to Playlist")
+    setOpenModal(true)
+    setNewVideo(details)
   };
-
+  
   const {channelId, title, urls, creator, duration, statistics } = details
 
   return (
@@ -31,7 +33,7 @@ const VideoCard = ({details}) => {
           <img
             className="thumbnail-image"
             src={urls["thumbnail"]}
-            alt="thumbnail-image"
+            alt="thumbnail"
           />
         </Link>
         <button
@@ -45,7 +47,7 @@ const VideoCard = ({details}) => {
         <button
           className="child-playlist-btn on-thumbnail-btns fs-3"
           title="add to Playlist"
-          onClick={handleAddToPlaylist}
+          onClick={(event)=>handleAddToPlaylist(event,details)}
         >
           {/* <span className="btns-extension fs-1r">Add to Playlist</span> */}
           <RiPlayList2Fill />
@@ -57,7 +59,7 @@ const VideoCard = ({details}) => {
         <img
           className="avatar size-S profile-image"
           src="./assets/playdesk-logo.png"
-          alt="profile-image"
+          alt="profile"
         />
         <div className="coloumn-flex title-container">
           <p className="video-main-title">
