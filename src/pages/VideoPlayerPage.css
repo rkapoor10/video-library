@@ -37,3 +37,6 @@
     color: var(--gray-color);
 }
 
+.active-btn{
+    color: var(--basered-color);
+}

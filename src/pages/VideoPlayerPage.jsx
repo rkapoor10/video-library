@@ -33,11 +33,19 @@ const VideoPlayerPage = () => {
             </span>
             <div className="player-btns">
               <button
-                className="like-btn"
+                className={`like-btn ${searchVideo(videoState["likedVideos"],details) && "active-btn"}`}
                 title="I like this"
                 onClick={() => {
-                  videoDispatch({ type: "LIKED_VIDEO", payload: details });
-                  toast.success("Added to liked videos");
+                  if(searchVideo(videoState["likedVideos"],details))
+                  {
+                    videoDispatch({ type: "REMOVE_FROM_LIKED", payload: details });
+                    toast.success("Removed from liked videos");
+                  }
+                  else{
+                    videoDispatch({ type: "LIKED_VIDEO", payload: details });
+                    toast.success("Added to liked videos");
+                  }
+                  
                 }}
               >
                 <AiFillLike /> {statistics["likeCount"]}K
