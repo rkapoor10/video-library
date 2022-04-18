@@ -17,6 +17,7 @@ const Router = ()=>{
     return(
         <Routes>
             <Route  path="/mockman" element={<MockMan/>}/>
+            <Route path="/" element={<HomePage/>}/>
             <Route path="/home" element={<HomePage/>}/>
             <Route path="/history" element={<HistoryPage/>}/>
             <Route path="/explore" element={<VideoListingPage/>}/>

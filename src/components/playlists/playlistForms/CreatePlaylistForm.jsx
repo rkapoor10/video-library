@@ -24,10 +24,10 @@ const CreatePlaylistForm = ({ newVideo }) => {
           />
           <div className="playlist-visibility">
             <label className="playlist-visibility-radio" htmlFor="visibility">
-              <input type="radio" value={"public"} name="visibility" id="visibility" onChange={event=>setFormInput({...formInput,visiblity:event.target.value})}/> Public
+              <input type="radio" value={"public"} name="visibility" id="visibility" onChange={event=>setFormInput({...formInput,visibility:event.target.value})}/> Public
             </label>
             <label className="playlist-visibility-radio" htmlFor="visibility">
-              <input type="radio" value={"private"} name="visibility" id="visibility" onChange={event=>setFormInput({...formInput,visiblity:event.target.value})}/> Private
+              <input type="radio" value={"private"} name="visibility" id="visibility" onChange={event=>setFormInput({...formInput,visibility:event.target.value})}/> Private
             </label>
           </div>
         </form>

@@ -3,28 +3,30 @@ import "./videoCard.css";
 import { MdWatchLater } from "react-icons/md";
 import { RiPlayList2Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
 import { useVideo } from "../../context/VideoContext/VideoContext";
 
-
-
-
-
-const VideoCard = ({details,setOpenModal, setNewVideo}) => {
-  const {videoDispatch} = useVideo()
+const VideoCard = ({ details, setOpenModal, setNewVideo }) => {
+  const searchVideo = (arr, video) => arr.includes(video);
+  const { videoState, videoDispatch } = useVideo();
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
-    videoDispatch({type:"ADD_TO_WATCHLATER",payload:details})
-    toast.success("Added to Watch Later")
+    if (searchVideo(videoState["watchLaterVideos"], details)) {
+      videoDispatch({ type: "REMOVE_FROM_WATCHLATER", payload: details });
+      toast.success("Removed from Watch Later");
+    } else {
+      videoDispatch({ type: "ADD_TO_WATCHLATER", payload: details });
+      toast.success("Added to Watch Later");
+    }
   };
 
-  const handleAddToPlaylist = (event,details) => {
+  const handleAddToPlaylist = (event, details) => {
     event.stopPropagation();
-    setOpenModal(true)
-    setNewVideo(details)
+    setOpenModal(true);
+    setNewVideo(details);
   };
-  
-  const {channelId, title, urls, creator, duration, statistics } = details
+
+  const { channelId, title, urls, creator, duration, statistics } = details;
 
   return (
     <div className="video-card-wrapper ">
@@ -36,18 +38,31 @@ const VideoCard = ({details,setOpenModal, setNewVideo}) => {
             alt="thumbnail"
           />
         </Link>
-        <button
-          className="child-watchlater-btn on-thumbnail-btns fs-3"
-          title="add to WatchLater"
-          onClick={handleAddToWatchLater}
-        >
-          {/* <span className="btns-extension fs-1r">WatchLater</span>  */}
-          <MdWatchLater />
-        </button>
+
+        {searchVideo(videoState["watchLaterVideos"], details) ? (
+          <button
+            className="child-watchlater-btn on-thumbnail-btns fs-3 active-watchlater"
+            title="add to WatchLater"
+            onClick={handleAddToWatchLater}
+          >
+            {/* <span className="btns-extension fs-1r">WatchLater</span>  */}
+            <MdWatchLater />
+          </button>
+        ) : (
+          <button
+            className="child-watchlater-btn on-thumbnail-btns fs-3"
+            title="add to WatchLater"
+            onClick={handleAddToWatchLater}
+          >
+            {/* <span className="btns-extension fs-1r">WatchLater</span>  */}
+            <MdWatchLater />
+          </button>
+        )}
+
         <button
           className="child-playlist-btn on-thumbnail-btns fs-3"
           title="add to Playlist"
-          onClick={(event)=>handleAddToPlaylist(event,details)}
+          onClick={(event) => handleAddToPlaylist(event, details)}
         >
           {/* <span className="btns-extension fs-1r">Add to Playlist</span> */}
           <RiPlayList2Fill />
@@ -62,11 +77,11 @@ const VideoCard = ({details,setOpenModal, setNewVideo}) => {
           alt="profile"
         />
         <div className="coloumn-flex title-container">
-          <p className="video-main-title">
-            {title}
-          </p>
+          <p className="video-main-title">{title}</p>
           <p className="video-sub-title">{creator}</p>
-          <p className="video-sub-title">{statistics["viewCount"]}M views • {statistics["likeCount"]}K likes</p>
+          <p className="video-sub-title">
+            {statistics["viewCount"]}M views • {statistics["likeCount"]}K likes
+          </p>
         </div>
       </div>
     </div>

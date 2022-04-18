@@ -57,6 +57,7 @@ const PlaylistProvider = ({ children }) => {
           {
             id: uuid(),
             title: payload.title,
+            channelName:"user",
             visibility: payload.visibility,
             videos: [payload.video],
           },
