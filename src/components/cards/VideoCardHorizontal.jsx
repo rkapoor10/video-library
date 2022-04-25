@@ -9,19 +9,19 @@ import { usePlaylist } from "../../context/PlaylistContext/PlaylistContext";
 
 
 const VideoCardHorizontal = ({details,location,playlistId,setOpenModal, setNewVideo}) => {
-  const {videoDispatch} = useVideo()
+  const searchVideo = (arr, video) => arr.includes(video);
+  const { videoState, videoDispatch } = useVideo();
   const {playlistDispatch} = usePlaylist()
   const {channelId, title, urls, creator, statistics,description } = details
 
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
-    if(location === "WatchLater"){
-      videoDispatch({type:"REMOVE_FROM_WATCHLATER",payload:details})
-      toast.success("Removed from Watch Later")
-    }
-    else{
-      videoDispatch({type:"ADD_TO_WATCHLATER",payload:details})
-      toast.success("Added to Watch Later")
+    if (searchVideo(videoState["watchLaterVideos"], details)) {
+      videoDispatch({ type: "REMOVE_FROM_WATCHLATER", payload: details });
+      toast.success("Removed from Watch Later");
+    } else {
+      videoDispatch({ type: "ADD_TO_WATCHLATER", payload: details });
+      toast.success("Added to Watch Later");
     }
   };
 
@@ -66,13 +66,26 @@ const VideoCardHorizontal = ({details,location,playlistId,setOpenModal, setNewVi
           alt="thumbnail"
         />
         </Link>
-        <button
-          className="horizontal-child-watchlater-btn on-thumbnail-btns fs-3"
-          title="watch later"
-          onClick={handleAddToWatchLater}
-        >
-          <MdWatchLater />
-        </button>
+
+        {searchVideo(videoState["watchLaterVideos"], details) ? (
+          <button
+            className="horizontal-child-watchlater-btn on-thumbnail-btns fs-3 active-watchlater"
+            title="add to WatchLater"
+            onClick={handleAddToWatchLater}
+          >
+            {/* <span className="btns-extension fs-1r">WatchLater</span>  */}
+            <MdWatchLater />
+          </button>
+        ) : (
+          <button
+            className="horizontal-child-watchlater-btn on-thumbnail-btns fs-3"
+            title="add to WatchLater"
+            onClick={handleAddToWatchLater}
+          >
+            {/* <span className="btns-extension fs-1r">WatchLater</span>  */}
+            <MdWatchLater />
+          </button>
+        )}
         <button
           className="horizontal-child-playlist-btn on-thumbnail-btns fs-3"
           title="add to playlist"

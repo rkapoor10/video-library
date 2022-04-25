@@ -78,6 +78,10 @@
   border: none;
 }
 
+.active-watchlater{
+  color: var(--basered-color);
+}
+
 
 .img-wrapper:hover .on-thumbnail-btns {
   display: flex;

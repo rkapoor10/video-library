@@ -1,10 +1,11 @@
-@import url("/node_modules/mockman-js/dist/style.css"); 
+@import url("/node_modules/mockman-js/dist/style.css");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-body{
-  background-color: 
-  #181818;
-  color: 
-  #ffffff;
+body {
+  background-color: #181818;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* body {

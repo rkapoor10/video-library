@@ -111,3 +111,7 @@ input[type="radio"] {
 .grid-column-layout{
   grid-template-columns: repeat(auto-fill,minmax(18em,1fr));
 }
+
+.active-btn{
+  color: var(--basered-color);
+}
