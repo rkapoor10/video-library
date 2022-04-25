@@ -1,0 +1,170 @@
+.auth-form{
+    background-color: #202020;
+}
+
+
+.privacy-terms[type="checkbox"]{
+    height: 1rem;
+     width: 1rem;
+}
+
+.form-background{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.7rem;
+}
+
+/* form styles */
+
+.text-area-container {
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: var(--lightgray-color);
+    width: 25rem;
+    height: 15rem;
+    border-radius: 0.3rem;
+
+}
+
+.text-area {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: 0 0 5px var(--lightgray-color);
+}
+
+.text-area:focus {
+    outline: none;
+}
+
+
+
+
+
+.login-form-grid-layout {
+
+    display: grid;
+    grid-template-areas:
+        "bn bn fm fm fm fm"
+    ;
+}
+
+.banner-layout {
+    grid-area: bn;
+}
+
+.banner-style {
+    background-color: var(--basered-color);
+    min-width: 15rem;
+    min-height: 30rem;
+    padding: 1rem;
+}
+
+.form-container{
+     min-height: 30rem;
+}
+
+.form-layout {
+    grid-area: fm;
+    background-color: #202020;
+    min-width: 30rem;
+    min-height: 30rem;
+}
+
+.form-styles {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    height: 30rem;
+    align-items: center;
+}
+
+
+
+.banner-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+
+
+.form-content {
+    color: #202020;
+    width: 10rem;
+}
+
+.form-hero {
+    width: 10rem;
+    height: 10rem;
+}
+
+
+/* FORM ----------------------------- */
+
+/* FORM-TABS---------- */
+
+.tabs-layout {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form-tabs {
+    border: none;
+    margin-top: 1rem;
+    background-color: #202020;
+    flex-grow: 1;
+    border-bottom: 2px solid var(--lightgray-color);
+    color: var(--gray-color);
+}
+
+
+
+.active {
+    border-bottom: 3px solid var(--basered-color);
+    color: var(--basered-color);
+}
+
+
+/* FORM INPUTS ------------ */
+
+
+.input-field {
+    border: none;
+    font-size: 1rem;
+    border-bottom: 3px solid var(--darkgray-color);
+    caret-color: var(--basered-color);
+    color: var(--white-color);
+    background-color: #202020;
+    padding: 1rem;
+    width: 80%;
+    
+
+}
+
+.input-field:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-bottom: 3px solid var(--basered-color);
+}
+
+/* validation */
+
+.error {
+    border-bottom: 3px solid var(--basered-color);
+}
+
+.secondary-cta-btn {
+    background-color: var(--secondary-color);
+}
+
+.secondary-cta-btn:hover {
+    background-color: var(--darksecondary-color);
+}

@@ -1,8 +1,9 @@
-import react from "react";
+import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { FaSearch } from "react-icons/fa";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <header className="navbar-container-flex fixed-navbar">
       <div className="nav-title">
@@ -32,8 +33,11 @@ const Navbar = () => {
         <button className="search-btn-alone" type="submit">
           <FaSearch title="search" />
         </button>
-        <button className="btn btn-padding txt-s btn-solid white login-btn bg-basered">
-          <a href="/login/login.html">Login</a>
+        <button
+          className="btn btn-padding txt-s btn-solid white login-btn bg-basered"
+          onClick={() => navigate("/login")}
+        >
+          Login
         </button>
       </div>
     </header>
