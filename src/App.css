@@ -27,6 +27,10 @@
 .bg-darksecondary{
   background-color: var(--darksecondary-color);
 }
+
+.bg-lightblack{
+  background-color: #202020;
+}
 .darksecondary{
   color: var(--darksecondary-color);
 }
