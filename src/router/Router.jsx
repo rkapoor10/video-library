@@ -39,24 +39,6 @@ const Router = () => {
     { path: "*", element: <ErrorPage />, requireAuth: false },
   ];
   return (
-    // <Routes>
-    //   <Route path="/mockman" element={<MockMan />} />
-    //   <Route path="/" element={<HomePage />} />
-    //   <Route path="/home" element={<HomePage />} />
-    //   <Route path="/history" element={<HistoryPage />} />
-    //   <Route path="/explore" element={<VideoListingPage />} />
-    //   <Route path="/playlist" element={<PlaylistPage />} />
-    //   <Route
-    //     path="/userplaylist/:playlistId"
-    //     element={<PlaylistListingPage />}
-    //   />
-    //   <Route path="/watchlater" element={<WatchLaterPage />} />
-    //   <Route path="/liked" element={<LikedVideosPage />} />
-    //   <Route path="/login" element={<LoginPage />} />
-    //   <Route path="/signup" element={<SignupPage />} />
-    //   <Route path="/player/:playerId" element={<VideoPlayerPage />} />
-    //   <Route path="*" element={<ErrorPage />} />
-    // </Routes>
     <Routes>
       {routes.map(({ path, element, requireAuth }) => (
         <Route
