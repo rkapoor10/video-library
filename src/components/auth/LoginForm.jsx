@@ -1,13 +1,14 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import "./login.css";
 import { useAuth } from "../../context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
 import loginService from "../../services/loginService";
+import validateInput from "../../utils/validateInput";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const { isLogedIn, setIsLogedIn } = useAuth();
+  const { setIsLogedIn } = useAuth();
   const location = useLocation();
   const [user, setUser] = useState({
     email: "",
@@ -21,8 +22,9 @@ const LoginForm = () => {
     checkPolicy: true,
   };
   const loginBtnHandler = (e, user) => {
+    console.log(location, "location-login")
     e.preventDefault();
-    if (user.email === "" || user.password === "") {
+    if (validateInput(user)) {
       toast.error("Give Valid Credentials");
     } else {
       if (!user.checkPolicy)
@@ -39,7 +41,7 @@ const LoginForm = () => {
             toast.success("Login Successful!");
           } else {
             // how to access status code here
-            toast.error("Login Failed, Enter valid credentials");
+            toast.error("Login Failed! Enter valid credentials");
           }
         };
         loggingIn();
