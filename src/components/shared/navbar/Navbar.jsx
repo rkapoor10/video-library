@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { FaSearch } from "react-icons/fa";
+import { useAuth } from "../../../context/AuthContext/AuthContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const {isLogedIn, setIsLogedIn} = useAuth();
   return (
     <header className="navbar-container-flex fixed-navbar">
       <div className="nav-title">
@@ -35,9 +37,9 @@ const Navbar = () => {
         </button>
         <button
           className="btn btn-padding txt-s btn-solid white login-btn bg-basered"
-          onClick={() => navigate("/login")}
+          onClick={() => isLogedIn? setIsLogedIn(false) : navigate("/login")}
         >
-          Login
+          {isLogedIn? "Logout" : "Login"}
         </button>
       </div>
     </header>
