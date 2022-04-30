@@ -1,19 +1,50 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./login.css";
 import { useAuth } from "../../context/AuthContext/AuthContext";
+import { toast } from "react-toastify";
+import loginService from "../../services/loginService";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const {isLogedIn, setIsLogedIn} = useAuth()
-  const location = useLocation()
-  const [user, setUser] = useState({ email: "", password: "" });
+  const { isLogedIn, setIsLogedIn } = useAuth();
+  const location = useLocation();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+    checkPolicy: false,
+  });
   const { email, password } = user;
-  const loginBtnHandler = (e) => {
+  const guest = {
+    email: "adarshbalika@gmail.com",
+    password: "adarshBalika123",
+    checkPolicy: true,
+  };
+  const loginBtnHandler = (e, user) => {
     e.preventDefault();
-    console.log(user);
-    setIsLogedIn(true)
-    navigate(location?.state?.from?.pathname || "/",  { replace: true })
+    if (user.email === "" || user.password === "") {
+      toast.error("Give Valid Credentials");
+    } else {
+      if (!user.checkPolicy)
+        toast.warning(
+          "tick the check box and agree to the terms and conditions"
+        );
+      else {
+        const loggingIn = async () => {
+          const response = await loginService(user);
+          if (response.status === 200) {
+            // how to to do it response and sethandler here ? and wich is a good practice ?
+            setIsLogedIn(true);
+            navigate(location?.state?.from?.pathname || "/", { replace: true });
+            toast.success("Login Successful!");
+          } else {
+            // how to access status code here
+            toast.error("Login Failed, Enter valid credentials");
+          }
+        };
+        loggingIn();
+      }
+    }
   };
   return (
     <div className="form-background">
@@ -73,6 +104,10 @@ const LoginForm = () => {
                       type="checkbox"
                       name="privacy-terms"
                       id="privacy-terms"
+                      checked={user.checkPolicy}
+                      onChange={() =>
+                        setUser({ ...user, checkPolicy: !user.checkPolicy })
+                      }
                     />
                     By continuing, you agree to Swift-UI
                     <span className="basered fw-semibold"> Terms of Use </span>
@@ -83,12 +118,19 @@ const LoginForm = () => {
 
                   <button
                     className="btn btn-padding txt-s white bg-basered w-80 "
-                    onClick={loginBtnHandler}
+                    onClick={(e) => loginBtnHandler(e, user)}
                   >
                     LOGIN
                   </button>
                   <span>OR</span>
-                  <button className="btn-secondary txt-s w-80">
+                  <button
+                    className="btn-secondary txt-s w-80"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      console.log("clicked", user);
+                      loginBtnHandler(e, guest);
+                    }}
+                  >
                     Guest Login
                   </button>
                 </form>
