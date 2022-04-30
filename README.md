@@ -8,7 +8,7 @@ Our goal is deliver the best video content from the world of Badminton.
 
 
 ## Live Link
- *[Live Website](https://playdesk.netlify.app/home)*
+ *[Live Website](https://playdesk.netlify.app/home)*    
  *[Latest Deployment - temp-dev ](https://playdesk-temp.netlify.app/home)*
  
 ## Deployment Status
