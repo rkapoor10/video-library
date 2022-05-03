@@ -8,6 +8,7 @@ import "./VideoPlayerPage.css";
 import { useVideo } from "../context/VideoContext/VideoContext";
 import findInVideos from "../utils/findInVideos";
 import { toast } from "react-toastify";
+import {postUserHistory} from "../services/history/postUserHistory"
 
 const VideoPlayerPage = () => {
   const { playerId } = useParams();
@@ -16,9 +17,19 @@ const VideoPlayerPage = () => {
   const details = findInVideos(videosData, "channelId", playerId);
 
   useEffect(
-    () => !searchVideo(videoState["history"],details) && videoDispatch({ type: "ADD_TO_HISTORY", payload: details }),
+    () => 
+      !searchVideo(videoState["history"],details) && videoDispatch({ type: "ADD_TO_HISTORY", payload: details }
+    ),
     []
   );
+
+  useEffect(async() => {
+    const response = await postUserHistory(details)
+    console.log(response)
+    toast.success(response)
+    toast.dark("video added to history")
+  }, [])
+  
   const { title, publishedDate, tags, statistics } = details;
   return (
     <div className="m-2">

@@ -4,7 +4,7 @@ import { useAuth } from "../../context/AuthContext/AuthContext";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import validateInput from "../../utils/validateInput";
-import signupService from "../../services/signupService";
+import signupService from "../../services/auth/signupService";
 
 const SignupForm = () => {
   const [newUser, setNewUser] = useState({
@@ -31,6 +31,8 @@ const SignupForm = () => {
           const response = await signupService(newUser);
           try{
             if (response.status === 201) {
+              localStorage.setItem("user", JSON.stringify(response.data.createdUser))
+              localStorage.setItem("token", response.data.encodedToken)
               setIsLogedIn(true);
               navigate(location?.state?.from?.pathname || "/", { replace: true });
               toast.success(`Welcome to PlayDesk, ${newUser.firstName} ✨`);
@@ -39,7 +41,6 @@ const SignupForm = () => {
               toast.error("SignUp Failed! Enter valid credentials");
             }
           }catch(error){
-            // a better way to this ?
             toast.error("Email Already Exists!")
           }
           

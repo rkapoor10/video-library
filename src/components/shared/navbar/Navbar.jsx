@@ -6,6 +6,10 @@ import { useAuth } from "../../../context/AuthContext/AuthContext";
 const Navbar = () => {
   const navigate = useNavigate();
   const {isLogedIn, setIsLogedIn} = useAuth();
+  const handleLogout = ()=> {
+    setIsLogedIn(false) 
+    localStorage.removeItem("user")
+  }
   return (
     <header className="navbar-container-flex fixed-navbar">
       <div className="nav-title">
@@ -37,7 +41,7 @@ const Navbar = () => {
         </button>
         <button
           className="btn btn-padding txt-s btn-solid white login-btn bg-basered"
-          onClick={() => isLogedIn? setIsLogedIn(false) : navigate("/login")}
+          onClick={() => isLogedIn? handleLogout() : navigate("/login")}
         >
           {isLogedIn? "Logout" : "Login"}
         </button>
