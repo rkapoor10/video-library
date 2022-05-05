@@ -5,15 +5,12 @@ const AuthContext = createContext({ isLogedIn: false });
 
 // provide context
 const AuthProvider = ({ children }) => {
-  const [isLogedIn, setIsLogedIn] = useState(false);
-  // const [userData, setUserData] = useState({});
   const user = JSON.parse(localStorage.getItem("user"));
+  const [isLogedIn, setIsLogedIn] = useState(user);
+
   useEffect(() => {
-    // console.log("user",user)
     if (user) {
       setIsLogedIn(true);
-      // setUserData(user.data.createdUser);
-      // console.log(userData, "userData")
     }
   }, []);
 

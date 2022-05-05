@@ -74,7 +74,7 @@ const PlaylistProvider = ({ children }) => {
             ? {
                 ...playlist,
                 videos: playlist.videos.filter(
-                  (video) => video.id !== payload.video.id
+                  (video) =>video.id !== payload.video.id
                 ),
               }
             : playlist

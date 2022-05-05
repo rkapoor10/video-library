@@ -1,3 +1,5 @@
+import { updateLocalStorage } from "../../utils/updateLocalStorage"
+
 const videoReducer = (state,action) => {
     const {type,payload} = action
     switch(type){
@@ -10,8 +12,10 @@ const videoReducer = (state,action) => {
         case "REMOVE_FROM_WATCHLATER":
             return {...state, watchLaterVideos:state.watchLaterVideos.filter((video)=>video.id!==payload.id)}
         case "ADD_TO_HISTORY":
+            updateLocalStorage("history",[...state.history, payload])
             return {...state, history:[...state.history, payload]}
         case "REMOVE_FROM_HISTORY":
+            updateLocalStorage("history",state.history.filter((video)=>video.id!==payload.id))
             return {...state, history:state.history.filter((video)=>video.id!==payload.id)}
         default:
             return state
