@@ -15,20 +15,9 @@ const VideoContext = createContext({});
 //provide context
 
 const VideoProvider = ({ children }) => {
-  const [historyFetched, setHistoryFetched] = useState([])
-  useEffect(() => {
-    // GET USER HISTORY FROM LOCAL STORAGE
-    const response = JSON.parse(localStorage.getItem("user"))
-    setHistoryFetched(response.history)
-    console.log(historyFetched,"historyFetched")
-    console.log(response,"response for history");
-  }, []);
-
-
-
   const initialVideoState = {
-    likedVideos: [],
-    watchLaterVideos: [],
+    likedVideos: [...JSON.parse(localStorage.getItem("user")).likes],
+    watchLaterVideos: [...JSON.parse(localStorage.getItem("user")).watchlater],
     history: [...JSON.parse(localStorage.getItem("user")).history],
   };
   const [videoState, videoDispatch] = useReducer(
