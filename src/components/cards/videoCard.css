@@ -117,11 +117,19 @@
 }
 
 .content-width{
-    width: 18.63rem;
+    width: 25rem;
 }
 
 .child-remove-btn{
     position: absolute;
     top: 5.5rem;
     right:0;
+}
+
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }

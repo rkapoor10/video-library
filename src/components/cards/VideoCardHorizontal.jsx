@@ -6,13 +6,14 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useVideo } from "../../context/VideoContext/VideoContext";
 import { usePlaylist } from "../../context/PlaylistContext/PlaylistContext";
+import { removeFromUserHistory } from "../../services/history/removeFromUserHistory";
 
 
 const VideoCardHorizontal = ({details,location,playlistId,setOpenModal, setNewVideo}) => {
   const searchVideo = (arr, video) => arr.includes(video);
   const { videoState, videoDispatch } = useVideo();
   const {playlistDispatch} = usePlaylist()
-  const {channelId, title, urls, creator, statistics,description } = details
+  const {_id,channelId, title, urls, creator, statistics,description } = details
 
   const handleAddToWatchLater = (event) => {
     event.stopPropagation();
@@ -30,6 +31,16 @@ const VideoCardHorizontal = ({details,location,playlistId,setOpenModal, setNewVi
     setOpenModal(true)
     setNewVideo(details)
   };
+
+  const removeFromHistoryApi = async(id)=>{
+    try{
+      const response = await removeFromUserHistory(id)
+      console.log("response from videoCardHorizontal - for remove history", response)
+    }catch(error){
+      console.error(error)
+      toast.error("failed to delete in videoCardHorizontal")
+    }
+  }
 
   const handleRemoveClick = (event) => {
     event.stopPropagation();
@@ -104,7 +115,7 @@ const VideoCardHorizontal = ({details,location,playlistId,setOpenModal, setNewVi
           {title}
           </p>
           <p className="video-sub-title">{creator} • {statistics["viewCount"]}M views</p>
-          <p className="video-sub-title">
+          <p className="video-sub-title line-clamp">
             {description}
           </p>
         </div>

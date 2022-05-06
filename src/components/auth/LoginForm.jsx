@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./login.css";
 import { useAuth } from "../../context/AuthContext/AuthContext";
 import { toast } from "react-toastify";
-import loginService from "../../services/loginService";
+import loginService from "../../services/auth/loginService";
 import validateInput from "../../utils/validateInput";
 
 const LoginForm = () => {
@@ -22,7 +22,6 @@ const LoginForm = () => {
     checkPolicy: true,
   };
   const loginBtnHandler = (e, user) => {
-    console.log(location, "location-login")
     e.preventDefault();
     if (validateInput(user)) {
       toast.error("Give Valid Credentials");
@@ -35,12 +34,15 @@ const LoginForm = () => {
         const loggingIn = async () => {
           const response = await loginService(user);
           if (response.status === 200) {
-            // how to to do it response and sethandler here ? and wich is a good practice ?
+            localStorage.setItem(
+              "user",
+              JSON.stringify(response.data.foundUser)
+            );
+            localStorage.setItem("token", response.data.encodedToken);
             setIsLogedIn(true);
             navigate(location?.state?.from?.pathname || "/", { replace: true });
             toast.success("Login Successful!");
           } else {
-            // how to access status code here
             toast.error("Login Failed! Enter valid credentials");
           }
         };
@@ -129,7 +131,6 @@ const LoginForm = () => {
                     className="btn-secondary txt-s w-80"
                     onClick={(e) => {
                       e.preventDefault();
-                      console.log("clicked", user);
                       loginBtnHandler(e, guest);
                     }}
                   >
