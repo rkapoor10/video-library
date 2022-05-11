@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { FaSearch } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { useAuth } from "../../../context/AuthContext/AuthContext";
 
 const Navbar = () => {
@@ -13,6 +14,7 @@ const Navbar = () => {
   return (
     <header className="navbar-container-flex fixed-navbar">
       <div className="nav-title">
+        <GiHamburgerMenu/>  
         <div className="nav-logo">
           <img src="./assets/playdesk-logo.png" alt="logo" />
         </div>
