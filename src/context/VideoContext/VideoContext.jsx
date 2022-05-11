@@ -15,16 +15,22 @@ const VideoContext = createContext({});
 //provide context
 
 const VideoProvider = ({ children }) => {
+  const [videosData, setVideosData] = useState([]);
+  // const initialVideoState = {
+  //   likedVideos: [],
+  //   watchLaterVideos: [],
+  //   history: [],
+  // };
+  const userString = localStorage.getItem("user");
   const initialVideoState = {
-    likedVideos: [...JSON.parse(localStorage.getItem("user")).likes],
-    watchLaterVideos: [...JSON.parse(localStorage.getItem("user")).watchlater],
-    history: [...JSON.parse(localStorage.getItem("user")).history],
+    likedVideos: userString ? [...JSON.parse(userString).likes] : [],
+    watchLaterVideos: userString ? [...JSON.parse(userString).watchlater] : [],
+    history: userString ? [...JSON.parse(userString).history] : [],
   };
   const [videoState, videoDispatch] = useReducer(
     videoReducer,
     initialVideoState
   );
-  const [videosData, setVideosData] = useState([]);
   const fetchVideo = async () => {
     try {
       const { data } = await axios.get("/api/videos");
@@ -34,8 +40,6 @@ const VideoProvider = ({ children }) => {
     }
   };
   useEffect(() => fetchVideo(), []);
-
- 
 
   return (
     <VideoContext.Provider value={{ videosData, videoState, videoDispatch }}>
