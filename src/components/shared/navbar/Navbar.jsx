@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <header className="navbar-container-flex fixed-navbar">
       <div className="nav-title">
-        <GiHamburgerMenu/>  
+        {/* <GiHamburgerMenu/>   */}
         <div className="nav-logo">
           <img src="./assets/playdesk-logo.png" alt="logo" />
         </div>
