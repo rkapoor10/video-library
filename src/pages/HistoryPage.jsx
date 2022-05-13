@@ -8,7 +8,7 @@ const HistoryPage = () => {
   const { videoState } = useVideo();
   const { history } = videoState;
   return (
-    <div className="">
+    <div  className="page-width">
       <h2 className="m-2">Watch History</h2>
 
       {history?.length === 0 ? (

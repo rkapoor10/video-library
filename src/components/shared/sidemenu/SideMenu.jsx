@@ -26,6 +26,7 @@ const SideMenu = () => {
     borderBottom: "0px",
   };
 
+
   return (
     <aside className="sidemenu-container sticky-sidemenu">
       <ul>
@@ -37,7 +38,7 @@ const SideMenu = () => {
             style={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <div className="menu-icon">{icon}</div>
-            <div className="menu-title">{name}</div>
+            <div className="menu-title disable-menu-titles">{name}</div>
           </NavLink>
         ))}
       </ul>
