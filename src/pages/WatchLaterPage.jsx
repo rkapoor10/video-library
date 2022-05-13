@@ -6,7 +6,7 @@ const WatchLaterPage = () => {
   const { videoState } = useVideo();
   const { watchLaterVideos } = videoState;
   return (
-    <div className="m-2">
+    <div className="page-width">
       <h2 className="m-2">Watch Later <span className="fs-15">({watchLaterVideos.length})</span></h2>
       {watchLaterVideos?.length === 0 ? (
         <h3 className="m-2">You are all caught up 😊</h3>
