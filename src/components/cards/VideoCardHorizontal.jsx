@@ -109,7 +109,7 @@ const VideoCardHorizontal = ({details,location,playlistId,setOpenModal, setNewVi
           <MdClose />
         </div>
       </div>
-      <div className="content-wrapper  content-width">
+      <div className="content-wrapper">
         <div className="column-flex">
           <p className="horizontal-video-main-title">
           {title}
