@@ -6,7 +6,6 @@ const defaultContextValue = {};
 const PlaylistContext = createContext(defaultContextValue);
 
 // provide context
-
 const PlaylistProvider = ({ children }) => {
   const [openModal, setOpenModal] = useState(false);
   const [newVideo , setNewVideo]  = useState({})
@@ -17,7 +16,7 @@ const PlaylistProvider = ({ children }) => {
       channelName: "channel one",
       visibility: "private",
       videos: [],
-    },
+    }, 
     {
       id: uuid(),
       title: "Favourites",
@@ -74,7 +73,7 @@ const PlaylistProvider = ({ children }) => {
             ? {
                 ...playlist,
                 videos: playlist.videos.filter(
-                  (video) => video.id !== payload.video.id
+                  (video) =>video.id !== payload.video.id
                 ),
               }
             : playlist

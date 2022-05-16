@@ -27,6 +27,10 @@
 .bg-darksecondary{
   background-color: var(--darksecondary-color);
 }
+
+.bg-lightblack{
+  background-color: #202020;
+}
 .darksecondary{
   color: var(--darksecondary-color);
 }
@@ -114,4 +118,18 @@ input[type="radio"] {
 
 .active-btn{
   color: var(--basered-color);
+}
+
+
+.page-width{
+  width: 80%;
+  margin:2rem;
+}
+
+
+@media only screen and (max-width:1010px){
+  .page-width{
+    width: 100%;
+    margin: 5px;
+  }
 }

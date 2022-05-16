@@ -1,11 +1,20 @@
-import react from "react";
+import { useNavigate } from "react-router-dom";
 import "./navbar.css";
 import { FaSearch } from "react-icons/fa";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useAuth } from "../../../context/AuthContext/AuthContext";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const {isLogedIn, setIsLogedIn} = useAuth();
+  const handleLogout = ()=> {
+    setIsLogedIn(false) 
+    localStorage.removeItem("user")
+  }
   return (
     <header className="navbar-container-flex fixed-navbar">
       <div className="nav-title">
+        {/* <GiHamburgerMenu className="ham-menu-icon basered"/>   */}
         <div className="nav-logo">
           <img src="./assets/playdesk-logo.png" alt="logo" />
         </div>
@@ -32,8 +41,11 @@ const Navbar = () => {
         <button className="search-btn-alone" type="submit">
           <FaSearch title="search" />
         </button>
-        <button className="btn btn-padding txt-s btn-solid white login-btn bg-basered">
-          <a href="/login/login.html">Login</a>
+        <button
+          className="btn btn-padding txt-s btn-solid white login-btn bg-basered"
+          onClick={() => isLogedIn? handleLogout() : navigate("/login")}
+        >
+          {isLogedIn? "Logout" : "Login"}
         </button>
       </div>
     </header>

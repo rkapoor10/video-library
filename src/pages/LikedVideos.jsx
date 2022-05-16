@@ -6,7 +6,7 @@ const LikedVideosPage = () => {
   const { videoState } = useVideo();
   const { likedVideos } = videoState;
   return (
-    <div className="">
+    <div  className="page-width">
       <h2 className="m-2">Liked Videos <span className="fs-15">({likedVideos.length})</span></h2>
       {(likedVideos?.length === 0) ? (
         <h3 className="m-2">Do Like some videos 😥</h3>

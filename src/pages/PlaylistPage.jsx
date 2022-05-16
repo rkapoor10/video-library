@@ -3,9 +3,8 @@ import PlaylistContainer, { PlaylistCard } from "../components/playlists/Playlis
 
 const PlaylistPage = ()=>{
     return(
-        <div className="m-2">
+        <div className="page-width">
             <h2  className="m-2">Your Playlists</h2>
-            {/* <PlaylistCard/> */}
             <PlaylistContainer/>
         </div>
     )

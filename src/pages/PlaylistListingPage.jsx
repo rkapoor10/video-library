@@ -14,7 +14,7 @@ const PlaylistListingPage = () => {
   const { title, channelName, visibility, videos} = playlist
   
   return (
-    <div className="m-2">
+    <div className="page-width">
       <h2 className="m-2">
         Playlist : {title} <span className="fs-15">({videos.length})</span>
       </h2>
